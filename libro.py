@@ -28,6 +28,7 @@ class Libro:
         return f"{self.titulo} - {self.autor} ({self.anio}) [{estado}]"
 
 
+
     @property
     def titulo(self):
         return self._titulo
@@ -45,3 +46,14 @@ class Libro:
     @property
     def es_antiguo(self):
         return self.anio < 1950
+
+
+    def __eq__(self, otro):
+        if not isinstance(otro, Libro):
+            return NotImplemented
+
+        return (
+            self.titulo == otro.titulo
+            and self.autor == otro.autor
+            and self.anio == otro.anio
+        )

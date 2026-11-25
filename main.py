@@ -27,6 +27,13 @@ def main():
 
     print("Total de libros creados:", Libro.total_libros)
 
+    for libro in libros:
+        print(libro)
+
+    otro_libro = Libro("Nada", "Carmen Laforet", 1945)
+
+    print(libros[3] == otro_libro)  # True
+    print(libros[3] is otro_libro)  # False
 
     try:
         nuevo_libro = Libro("", "Miguel de Unamuno", 1914)
