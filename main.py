@@ -25,5 +25,7 @@ def main():
     except ValueError as error:
         print(error)
 
+    print("Total de libros creados:", Libro.total_libros)
+
 if __name__ == "__main__":
     main()
