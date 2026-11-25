@@ -26,3 +26,18 @@ class Libro:
     def __str__(self):
         estado = "Disponible" if self.disponible else "Prestado"
         return f"{self.titulo} - {self.autor} ({self.anio}) [{estado}]"
+
+
+    @property
+    def titulo(self):
+        return self._titulo
+
+    @titulo.setter
+    def titulo(self, nuevo_titulo):
+        if not isinstance(nuevo_titulo, str):
+            raise TypeError("El título debe ser texto")
+
+        if not nuevo_titulo.strip():
+            raise ValueError("El título no puede estar vacío")
+
+        self._titulo = nuevo_titulo.strip()
