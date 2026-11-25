@@ -41,3 +41,7 @@ class Libro:
             raise ValueError("El título no puede estar vacío")
 
         self._titulo = nuevo_titulo.strip()
+
+    @property
+    def es_antiguo(self):
+        return self.anio < 1950

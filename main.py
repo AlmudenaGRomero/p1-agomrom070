@@ -33,7 +33,13 @@ def main():
         libros.append(nuevo_libro)
     except ValueError as error:
         print(f"Error al crear el libro: {error}")
-        
+
+    for libro in libros:
+        print(libro.titulo, libro.es_antiguo)
+
+    reciente = Libro("Ejemplo reciente", "Autor de ejemplo", 2022)
+    print(reciente.titulo, reciente.es_antiguo)
+
 
 if __name__ == "__main__":
     main()
