@@ -9,9 +9,21 @@ def main():
         Libro("La familia de Pascual Duarte", "Camilo José Cela", 1942)
     ]
 
-    for libro in libros:
-        print(libro.titulo, libro.autor, libro.anio)
+    libro=libros[1]
+
+    try:    
+        print(libro)
+        libro.prestar()
+        libro.prestar()
+    except ValueError as error:
+        print(error)
+
+    try: 
+        print(libro)
+        libro.devolver()
+        libro.devolver()
+    except ValueError as error:
+        print(error)
 
 if __name__ == "__main__":
     main()
-
